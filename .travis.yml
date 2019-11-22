@@ -1,0 +1,47 @@
+sudo: false
+
+matrix:
+  include:
+    - os: linux
+      language: python
+      name: python 3.7
+      python:
+        - 3.7
+
+install:
+    - python --version
+    - pip install numpy six
+    - echo "TRAVIS_OS_NAME:" "$TRAVIS_OS_NAME"
+    - git clone https://github.com/populse/soma-base.git /tmp/soma-base
+    - python /tmp/soma-base/setup.py install
+    - git clone https://github.com/populse/populse_db.git /tmp/populse_db
+    - pushd /tmp/populse_db
+    - PYTHONPATH="/tmp/populse_db/lib/python${TRAVIS_PYTHON_VERSION}/site-packages:$PYTHONPATH" python /tmp/populse_db/setup.py install
+    - popd
+    - git clone https://github.com/populse/soma-workflow.git /tmp/soma-workflow
+    - pushd /tmp/soma-workflow
+    - python /tmp/soma-workflow/setup.py install
+    - popd
+    - git clone https://github.com/populse/capsul.git /tmp/capsul
+    - pushd /tmp/capsul
+    - python /tmp/capsul/setup.py install
+    - popd
+    - if [ ${TRAVIS_PYTHON_VERSION:0:1} == "2" ]; then pip install importlib; fi
+    # to test notebooks
+    - pip install jupyter nbconvert
+    - sudo apt-get install -y pandoc graphviz
+    - pip install sphinx sphinx-gallery pandoc nbsphinx
+    - if [[  "$TRAVIS_OS_NAME" = "linux" && "$TRAVIS_PYTHON_VERSION" == "3.7" ]]; then cd doc && make html && touch build/html/.nojekyll && cd ..; fi
+    - if [[ -n "$GITHUB_ACCESS_TOKEN" ]]; then export PUSH_DOC_TO_GH_PAGES=yes; fi
+    # don't stay in source directory to actually use the installed capsul
+    - cd ..
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_ACCESS_TOKEN
+  target-branch: gh-pages
+  local-dir: doc/_build/html
+  on:
+    branch: master
+    condition: $PUSH_DOC_TO_GH_PAGES == yes && $TRAVIS_OS_NAME == linux && $TRAVIS_PYTHON_VERSION == 3.7
