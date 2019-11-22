@@ -114,6 +114,7 @@ La doc peut être construite par `Travis-CI <https://travis-ci.org/>`_ et inject
 Pour cela il faut:
 
 * donner les droits à travis-ci de pousser la doc dans le projet github (la branche ``gh-pages`` est sous git). Pour cela il faut générer un "github personal access token", et le mettre en variable d'environnement dans le build travis-ci (ici c'est ``GITHUB_ACCESS_TOKEN``). `La doc est ici <https://docs.travis-ci.com/user/deployment/pages/>`_.
+* avoir créé sur GitHub la branche ``gh-pages`` (vide, possiblement détachée).
 * configurer ``.travis.yaml``, en ajoutant un truc de ce genre (la condition ici est liée à des variables définies plus tôt dans ``.travis.yaml``, il faut l'adapter):
 
 .. code-block:: yaml
