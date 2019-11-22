@@ -35,6 +35,9 @@ install:
     - if [[  "$TRAVIS_OS_NAME" = "linux" && "$TRAVIS_PYTHON_VERSION" == "3.7" ]]; then cd doc && make html; cd ..; fi
     - if [[ -n "$GITHUB_ACCESS_TOKEN" ]]; then export PUSH_DOC_TO_GH_PAGES=yes; fi
 
+script:
+    - echo "no tests."
+
 deploy:
   provider: pages
   skip_cleanup: true
