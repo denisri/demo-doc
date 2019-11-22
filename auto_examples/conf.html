@@ -1,0 +1,516 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sphinx config file &#8212; Doc tutorial 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Capsul" href="../process_docs/example_module/capsul/index.html" />
+    <link rel="prev" title="Example with image" href="with_image.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">Note</p>
+<p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-conf-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="sphinx-config-file">
+<span id="sphx-glr-auto-examples-conf-py"></span><h1>Sphinx config file<a class="headerlink" href="#sphinx-config-file" title="Permalink to this headline">¶</a></h1>
+<p>config source code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="c1"># Configuration file for the Sphinx documentation builder.</span>
+<span class="c1">#</span>
+<span class="c1"># This file does only contain a selection of the most common options. For a</span>
+<span class="c1"># full list see the documentation:</span>
+<span class="c1"># http://www.sphinx-doc.org/en/master/config</span>
+
+<span class="c1"># -- Path setup --------------------------------------------------------------</span>
+
+<span class="c1"># If extensions (or modules to document with autodoc) are in another directory,</span>
+<span class="c1"># add these directories to sys.path here. If the directory is relative to the</span>
+<span class="c1"># documentation root, use os.path.abspath to make it absolute, like shown here.</span>
+<span class="c1">#</span>
+<span class="c1"># import os</span>
+<span class="c1"># import sys</span>
+<span class="c1"># sys.path.insert(0, os.path.abspath(&#39;.&#39;))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">shutil</span>
+<span class="kn">import</span> <span class="nn">subprocess</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- Project information -----------------------------------------------------</span>
+
+<span class="n">project</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Doc tutorial&#39;</span>
+<span class="n">copyright</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;2019, nobody&#39;</span>
+<span class="n">author</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;nobody&#39;</span>
+
+<span class="c1"># The short X.Y version</span>
+<span class="n">version</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&#39;</span>
+<span class="c1"># The full version, including alpha/beta/rc tags</span>
+<span class="n">release</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;1.0.0&#39;</span>
+
+
+<span class="c1"># -- General configuration ---------------------------------------------------</span>
+
+<span class="c1"># If your documentation needs a minimal Sphinx version, state it here.</span>
+<span class="c1">#</span>
+<span class="c1"># needs_sphinx = &#39;1.0&#39;</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings. They can be</span>
+<span class="c1"># extensions coming with Sphinx (named &#39;sphinx.ext.*&#39;) or your custom</span>
+<span class="c1"># ones.</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;sphinx.ext.autodoc&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.doctest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.intersphinx&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.todo&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.coverage&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.ifconfig&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.viewcode&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.githubpages&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.napoleon&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.extlinks&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;sphinx.ext.inheritance_diagram&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- nbsphinx ext -------</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># nbsphinx converts ipython/jupyter notebooks to sphinx docs</span>
+    <span class="kn">import</span> <span class="nn">nbsphinx</span>
+    <span class="kn">import</span> <span class="nn">distutils.spawn</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">distutils</span><span class="o">.</span><span class="n">spawn</span><span class="o">.</span><span class="n">find_executable</span><span class="p">(</span><span class="s1">&#39;pandoc&#39;</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: pandoc is missing. Notebooks will not be included &#39;</span>
+              <span class="s1">&#39;in the docs&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nbsphinx_allow_errors</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">extensions</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;nbsphinx&#39;</span><span class="p">,</span>
+                      <span class="s1">&#39;sphinx.ext.mathjax&#39;</span><span class="p">]</span>
+        <span class="c1"># set this env variable to tell notebooks that we should not use</span>
+        <span class="c1"># any GUI during notebooks execution</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;ALLOW_GUI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;0&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-- nbsphinx should work. --&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="n">nbsphinx</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Warning: nbsphinx could not be imported, the notebooks will not &#39;</span>
+          <span class="s1">&#39;appear in the docs&#39;</span><span class="p">)</span>
+
+<span class="c1"># -- sphinx-gallery ext -----</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">matplotlib</span>
+    <span class="kn">import</span> <span class="nn">sphinx_gallery</span>
+    <span class="n">extensions</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;sphinx_gallery.gen_gallery&#39;</span><span class="p">)</span>
+    <span class="n">sphinx_gallery_conf</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;examples_dirs&#39;</span><span class="p">:</span> <span class="s1">&#39;code_examples&#39;</span><span class="p">,</span>   <span class="c1"># path to your example scripts</span>
+        <span class="s1">&#39;gallery_dirs&#39;</span><span class="p">:</span> <span class="s1">&#39;auto_examples&#39;</span><span class="p">,</span>  <span class="c1"># path where to save gallery generated examples</span>
+        <span class="s1">&#39;filename_pattern&#39;</span><span class="p">:</span> <span class="s1">&#39;.*\.py&#39;</span><span class="p">,</span>
+        <span class="c1">#&#39;ignore_pattern&#39;: r&#39;/[^abcefgmnst][^/]*\.py$&#39;,</span>
+        <span class="s1">&#39;expected_failing_examples&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;code_examples/conf.py&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="k">pass</span>  <span class="c1"># no gallery. Oh, well.</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>-- nbsphinx should work. --
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add any paths that contain templates here, relative to this directory.</span>
+<span class="n">templates_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_templates&#39;</span><span class="p">]</span>
+
+<span class="c1"># The suffix(es) of source filenames.</span>
+<span class="c1"># You can specify multiple suffix as a list of string:</span>
+<span class="c1">#</span>
+<span class="c1"># source_suffix = [&#39;.rst&#39;, &#39;.md&#39;]</span>
+<span class="n">source_suffix</span> <span class="o">=</span> <span class="s1">&#39;.rst&#39;</span>
+
+<span class="c1"># The master toctree document.</span>
+<span class="n">master_doc</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span>
+
+<span class="c1"># The language for content autogenerated by Sphinx. Refer to documentation</span>
+<span class="c1"># for a list of supported languages.</span>
+<span class="c1">#</span>
+<span class="c1"># This is also used if you do content translation via gettext catalogs.</span>
+<span class="c1"># Usually you set &quot;language&quot; from the command line for these cases.</span>
+<span class="n">language</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># List of patterns, relative to source directory, that match files and</span>
+<span class="c1"># directories to ignore when looking for source files.</span>
+<span class="c1"># This pattern also affects html_static_path and html_extra_path.</span>
+<span class="n">exclude_patterns</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;_build&#39;</span><span class="p">,</span> <span class="s1">&#39;Thumbs.db&#39;</span><span class="p">,</span> <span class="s1">&#39;.DS_Store&#39;</span><span class="p">]</span>
+
+<span class="c1"># The name of the Pygments (syntax highlighting) style to use.</span>
+<span class="n">pygments_style</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="c1"># -- Options for HTML output -------------------------------------------------</span>
+
+<span class="c1"># The theme to use for HTML and HTML Help pages.  See the documentation for</span>
+<span class="c1"># a list of builtin themes.</span>
+<span class="c1">#</span>
+<span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;alabaster&#39;</span>
+<span class="c1">#html_theme = &#39;default&#39;</span>
+
+<span class="c1"># Theme options are theme-specific and customize the look and feel of a theme</span>
+<span class="c1"># further.  For a list of options available for each theme, see the</span>
+<span class="c1"># documentation.</span>
+<span class="c1">#</span>
+<span class="c1"># html_theme_options = {}</span>
+
+<span class="c1"># Add any paths that contain custom static files (such as style sheets) here,</span>
+<span class="c1"># relative to this directory. They are copied after the builtin static files,</span>
+<span class="c1"># so a file named &quot;default.css&quot; will overwrite the builtin &quot;default.css&quot;.</span>
+<span class="n">html_static_path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;_static&#39;</span><span class="p">]</span>
+
+<span class="c1"># Custom sidebar templates, must be a dictionary that maps document names</span>
+<span class="c1"># to template names.</span>
+<span class="c1">#</span>
+<span class="c1"># The default sidebars (for documents that don&#39;t match any pattern) are</span>
+<span class="c1"># defined by theme itself.  Builtin themes are using these templates by</span>
+<span class="c1"># default: ``[&#39;localtoc.html&#39;, &#39;relations.html&#39;, &#39;sourcelink.html&#39;,</span>
+<span class="c1"># &#39;searchbox.html&#39;]``.</span>
+<span class="c1">#</span>
+<span class="c1"># html_sidebars = {}</span>
+
+
+<span class="c1"># -- Options for HTMLHelp output ---------------------------------------------</span>
+
+<span class="c1"># Output file base name for HTML help builder.</span>
+<span class="n">htmlhelp_basename</span> <span class="o">=</span> <span class="s1">&#39;Doctutorialdoc&#39;</span>
+
+
+<span class="c1"># -- Options for LaTeX output ------------------------------------------------</span>
+
+<span class="n">latex_elements</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># The paper size (&#39;letterpaper&#39; or &#39;a4paper&#39;).</span>
+    <span class="c1">#</span>
+    <span class="c1"># &#39;papersize&#39;: &#39;letterpaper&#39;,</span>
+
+    <span class="c1"># The font size (&#39;10pt&#39;, &#39;11pt&#39; or &#39;12pt&#39;).</span>
+    <span class="c1">#</span>
+    <span class="c1"># &#39;pointsize&#39;: &#39;10pt&#39;,</span>
+
+    <span class="c1"># Additional stuff for the LaTeX preamble.</span>
+    <span class="c1">#</span>
+    <span class="c1"># &#39;preamble&#39;: &#39;&#39;,</span>
+
+    <span class="c1"># Latex figure (float) alignment</span>
+    <span class="c1">#</span>
+    <span class="c1"># &#39;figure_align&#39;: &#39;htbp&#39;,</span>
+<span class="p">}</span>
+
+<span class="c1"># Grouping the document tree into LaTeX files. List of tuples</span>
+<span class="c1"># (source start file, target name, title,</span>
+<span class="c1">#  author, documentclass [howto, manual, or own class]).</span>
+<span class="n">latex_documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">&#39;Doctutorial.tex&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Doc tutorial Documentation&#39;</span><span class="p">,</span>
+     <span class="sa">u</span><span class="s1">&#39;nobody&#39;</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<span class="c1"># -- Options for manual page output ------------------------------------------</span>
+
+<span class="c1"># One entry per manual page. List of tuples</span>
+<span class="c1"># (source start file, name, description, authors, manual section).</span>
+<span class="n">man_pages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">&#39;doctutorial&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Doc tutorial Documentation&#39;</span><span class="p">,</span>
+     <span class="p">[</span><span class="n">author</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">]</span>
+
+
+<span class="c1"># -- Options for Texinfo output ----------------------------------------------</span>
+
+<span class="c1"># Grouping the document tree into Texinfo files. List of tuples</span>
+<span class="c1"># (source start file, target name, title, author,</span>
+<span class="c1">#  dir menu entry, description, category)</span>
+<span class="n">texinfo_documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">&#39;Doctutorial&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;Doc tutorial Documentation&#39;</span><span class="p">,</span>
+     <span class="n">author</span><span class="p">,</span> <span class="s1">&#39;Doctutorial&#39;</span><span class="p">,</span> <span class="s1">&#39;One line description of project.&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;Miscellaneous&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+
+
+<span class="c1"># -- Options for Epub output -------------------------------------------------</span>
+
+<span class="c1"># Bibliographic Dublin Core info.</span>
+<span class="n">epub_title</span> <span class="o">=</span> <span class="n">project</span>
+
+<span class="c1"># The unique identifier of the text. This can be a ISBN number</span>
+<span class="c1"># or the project homepage.</span>
+<span class="c1">#</span>
+<span class="c1"># epub_identifier = &#39;&#39;</span>
+
+<span class="c1"># A unique identification for the text.</span>
+<span class="c1">#</span>
+<span class="c1"># epub_uid = &#39;&#39;</span>
+
+<span class="c1"># A list of files that should not be packed into the epub file.</span>
+<span class="n">epub_exclude_files</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;search.html&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># -- Extension configuration -------------------------------------------------</span>
+
+<span class="c1"># -- Options for intersphinx extension ---------------------------------------</span>
+
+<span class="c1"># Example configuration for intersphinx: refer to the Python standard library.</span>
+<span class="n">intersphinx_mapping</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;https://docs.python.org/&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s1">&#39;https://populse.github.io/capsul/&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="s1">&#39;https://matplotlib.org/&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
+
+<span class="c1"># -- Options for todo extension ----------------------------------------------</span>
+
+<span class="c1"># If true, `todo` and `todoList` produce output, else they produce nothing.</span>
+<span class="n">todo_include_todos</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="section" id="code-added-after-regular-sphinx-conf-file">
+<h2>code added after regular sphinx conf file<a class="headerlink" href="#code-added-after-regular-sphinx-conf-file" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># -- Extlinks ------</span>
+<span class="n">extlinks</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;capsul&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;https://populse.github.io/capsul/</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;capsul &#39;</span><span class="p">),</span>
+<span class="p">}</span>
+
+<span class="c1"># -- nbsphinx ------</span>
+<span class="k">if</span> <span class="n">nbsphinx</span><span class="p">:</span>
+    <span class="c1"># Notebooks handling:</span>
+    <span class="c1">#</span>
+    <span class="c1"># Several problems are handled here:</span>
+    <span class="c1"># 1. nbsphinx 0.4 does not read (ignores) notebooks in _static/</span>
+    <span class="c1">#    For this reason we moved the NB to tutorial/</span>
+    <span class="c1"># 2. nbsphinx 0.4 does not allow direct links to the .ipynb (for download)</span>
+    <span class="c1">#    but replaces them with the converted HTML page.</span>
+    <span class="c1">#    For this reason we duplicate the NB into _static/ where NB are not</span>
+    <span class="c1">#    processed, and links not changed</span>
+    <span class="c1"># 3. notebooks include kernel infoemation which does not necessarily match the</span>
+    <span class="c1">#    running/installed python and jupyter kernels.</span>
+    <span class="c1">#    For this reason we conbert them using pupyter nbconvert, forcing the</span>
+    <span class="c1">#    kernel to the current running python version.</span>
+    <span class="c1"># 4. sphinx does not copy image files not in _static/ into the build tree.</span>
+    <span class="c1">#    So we copy them into the build tree.</span>
+    <span class="c1"># 5. nbsphinx 0.4 messes up image links when the notebook is not in the root</span>
+    <span class="c1">#    of the sphinx tree. Typically in a notebook placed in tutorial/,</span>
+    <span class="c1">#    containing links to &quot;images/something.jpg&quot;, the HTML page will contain</span>
+    <span class="c1">#    links to &quot;tutorial/images/something.jpg&quot;.</span>
+    <span class="c1">#    To overcome this, we copy the images directory into</span>
+    <span class="c1">#    &quot;tutorial/tutorial/images/&quot; in the build tree.</span>
+    <span class="c1">#</span>
+    <span class="c1"># Thus, in git sources we have:</span>
+    <span class="c1">#</span>
+    <span class="c1">#     tutorial/capsul_tutorial.ipynb.in</span>
+    <span class="c1">#     tutorial/images/*.jpg</span>
+    <span class="c1">#</span>
+    <span class="c1"># After running this conf.py (run by sphinx actually), we have additionally,</span>
+    <span class="c1"># still in sources:</span>
+    <span class="c1">#</span>
+    <span class="c1">#     tutorial/capsul_tutorial.ipynb</span>
+    <span class="c1">#</span>
+    <span class="c1"># and in the build tree:</span>
+    <span class="c1">#</span>
+    <span class="c1">#     _static/tutorial/capsul_tutorial.ipynb</span>
+    <span class="c1">#     tutorial/tutorial/images/*.jpg</span>
+    <span class="c1">#</span>
+    <span class="c1"># Hack to copy files from sources to build dir</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">src_dir</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;source:&#39;</span><span class="p">,</span> <span class="n">src_dir</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dest:&#39;</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cwd:&#39;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+    <span class="c1">#if not os.path.isabs(src_dir) and not os.path.exists(os.path.join(src_dir)):</span>
+        <span class="c1">## this strange config appears in Makefile builds</span>
+        <span class="c1">#src_dir = os.getcwd()</span>
+    <span class="n">src_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">src_dir</span><span class="p">)</span>
+    <span class="n">out_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">out_dir</span><span class="p">),</span> <span class="s1">&#39;html&#39;</span><span class="p">)</span>  <span class="c1"># add html here</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abs source:&#39;</span><span class="p">,</span> <span class="n">src_dir</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;abs dest:&#39;</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">)</span>
+    <span class="c1"># nbsphinx 3/4 has a bug: it adds the 1st directory level to images paths.</span>
+    <span class="c1"># so we have to move it into a 2nd level of &#39;tutorial&#39;. Probably nbsphinx</span>
+    <span class="c1"># is only working well for notebooks at the root of the source tree.</span>
+    <span class="n">out_tuto_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial&#39;</span><span class="p">)</span>
+    <span class="n">out_tuto_img_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_tuto_path</span><span class="p">,</span> <span class="s1">&#39;tutorial&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_tuto_img_path</span><span class="p">):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">out_tuto_img_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">out_tuto_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">out_tuto_path</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial/images&#39;</span><span class="p">)):</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial/images&#39;</span><span class="p">),</span>
+                        <span class="n">out_tuto_img_path</span><span class="p">)</span>
+
+    <span class="c1"># convert notebook(s) with correct python kernel</span>
+    <span class="n">nb_name</span> <span class="o">=</span> <span class="s1">&#39;sample_notebook.ipynb&#39;</span>
+    <span class="n">in_nb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial/</span><span class="si">%s</span><span class="s1">.in&#39;</span> <span class="o">%</span> <span class="n">nb_name</span><span class="p">)</span>
+    <span class="n">out_nb</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nb_name</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;jupyter&#39;</span><span class="p">,</span> <span class="s1">&#39;nbconvert&#39;</span><span class="p">,</span> <span class="s1">&#39;--to&#39;</span><span class="p">,</span> <span class="s1">&#39;notebook&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;--execute&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;--ExecutePreprocessor.kernel_name=python</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="s1">&#39;--output&#39;</span><span class="p">,</span> <span class="n">out_nb</span><span class="p">,</span> <span class="n">in_nb</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;exec:&#39;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">check_call</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="c1">#shutil.copy2(os.path.join(src_dir, &#39;tutorial/capsul_tutorial.ipynb.in&#39;),</span>
+                <span class="c1">#os.path.join(out_tuto_path, &#39;capsul_tutorial.ipynb.in&#39;))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;_static/tutorial&#39;</span><span class="p">)):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;_static/tutorial&#39;</span><span class="p">))</span>
+    <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;tutorial/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nb_name</span><span class="p">),</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;_static/tutorial/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nb_name</span><span class="p">))</span>
+
+<span class="c1"># -- copy this conf.py as code example</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="s1">&#39;code_examples&#39;</span><span class="p">,</span> <span class="s1">&#39;conf.py&#39;</span><span class="p">),</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&quot;&quot;&quot;Sphinx config file</span>
+<span class="s1">==================</span>
+
+<span class="s1">config source code</span>
+<span class="s1">&quot;&quot;&quot;</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span> <span class="k">as</span> <span class="n">sf</span><span class="p">:</span>
+        <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">sf</span><span class="p">))</span>  <span class="c1"># skip encoding line</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sf</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="c1"># -- generate pipeline and processes docs -----</span>
+<span class="c1"># we must actually write in sources for now.</span>
+<span class="n">sphinx_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+<span class="n">proc_rst_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">sphinx_dir</span><span class="p">,</span> <span class="s1">&#39;process_docs&#39;</span><span class="p">,</span> <span class="s1">&#39;example_module&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">proc_rst_dir</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">proc_rst_dir</span><span class="p">)</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">executable</span><span class="p">,</span> <span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="s1">&#39;capsul.sphinxext.capsul_pipeline_rst&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;-i&#39;</span><span class="p">,</span> <span class="s1">&#39;sample_module.capsul&#39;</span><span class="p">,</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">proc_rst_dir</span><span class="p">,</span> <span class="s1">&#39;--schema&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;generating CAPSUL processes docs...&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-pytb notranslate"><div class="highlight"><pre><span></span><span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;/home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">440</span>, in <span class="n">_memory_usage</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+  File <span class="nb">&quot;/home/travis/virtualenv/python3.7.1/lib/python3.7/site-packages/sphinx_gallery/gen_rst.py&quot;</span>, line <span class="m">425</span>, in <span class="n">__call__</span>
+    <span class="k">exec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">globals</span><span class="p">)</span>
+  File <span class="nb">&quot;/home/travis/build/denisri/demo-doc/doc/code_examples/conf.py&quot;</span>, line <span class="m">306</span>, in <span class="n">&lt;module&gt;</span>
+    <span class="n">src_dir</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.007 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-conf-py">
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/ed8e1ab66ab7d0b2d8f001a3b74f65e1/conf.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">conf.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download docutils container">
+<p><a class="reference download internal" download="" href="../_downloads/078563716775259e43c7196fed403572/conf.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">conf.ipynb</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Doc tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../moduledoc.html">Doc de modules python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial/sample_notebook.html">Sample Notebook</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Code examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="class1.html">Class1 use example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="with_image.html">Example with image</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Sphinx config file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../process_docs/example_module/capsul/index.html">Capsul</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Code examples</a><ul>
+      <li>Previous: <a href="with_image.html" title="previous chapter">Example with image</a></li>
+      <li>Next: <a href="../process_docs/example_module/capsul/index.html" title="next chapter">Capsul</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, nobody.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/auto_examples/conf.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

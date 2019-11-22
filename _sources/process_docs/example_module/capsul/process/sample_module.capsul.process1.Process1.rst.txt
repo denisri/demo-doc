@@ -1,0 +1,53 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+:orphan:
+
+.. currentmodule:: sample_module.capsul.process1
+
+
+.. _sample_module.capsul.process1.Process1:
+
+sample_module.capsul.process1.Process1
+======================================
+
+Process1
+--------
+
+
+
+    This silly process concatenates in an output file the input file and the other int input parameter. Not very useful, for sure.
+    
+    
+    .. note::
+    
+        * Type 'Process1.help()' for a full description of this process parameters.
+        * Type '<Process1>.get_input_spec()' for a full description of this process input trait types.
+        * Type '<Process1>.get_output_spec()' for a full description of this process output trait types.
+    
+
+.. _sample_module.capsul.process1.Process1_inputs:
+
+
+Inputs
+~~~~~~
+
+[Mandatory]
+
++------------------------------------------------------------------+
+| | **param_a**: a file name (['File'] - mandatory)                |
+| |     input param A                                              |
++------------------------------------------------------------------+
+| | **param_b**: an integer (int or long) (['Int'] - mandatory)    |
+| |     another parameter B                                        |
++------------------------------------------------------------------+
+
+.. _sample_module.capsul.process1.Process1_outputs:
+
+
+Outputs
+~~~~~~~
+
++------------------------------------------------------------------------+
+| | **param_c**: a file name (['File (filename: input)'] - mandatory)    |
+| |     output param C                                                   |
++------------------------------------------------------------------------+

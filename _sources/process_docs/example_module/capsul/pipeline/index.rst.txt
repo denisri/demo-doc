@@ -1,0 +1,17 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+.. raw:: html
+
+    <!-- Block section -->
+    <table border='1' class='docutils' style='width:100%'>
+    <colgroup><col width='25%'/><col width='75%'/></colgroup>
+    <tbody valign='top'>
+    <tr class='row-odd'>
+    <td><a class='reference internal' href='pipeline/sample_module.capsul.pipeline1.Pipeline1.html'><em>pipeline1.Pipeline1</em></a></td>
+
+    <td></td>
+    </tr>
+    </tbody>
+
+
+    </table>

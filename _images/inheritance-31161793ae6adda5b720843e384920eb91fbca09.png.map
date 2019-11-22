@@ -1,0 +1,9 @@
+<map id="inheritance0bb68696fe" name="inheritance0bb68696fe">
+<area shape="rect" id="node4" title="Enables any Python class derived from it to have trait attributes." alt="" coords="143,55,223,80"/>
+<area shape="rect" id="node2" href="#sample_module.mod1.Class1" target="_top" title="A class which does nothing." alt="" coords="14,5,86,31"/>
+<area shape="rect" id="node3" title="A Controller contains some traits: attributes typing and observer" alt="" coords="271,55,355,80"/>
+<area shape="rect" id="node6" title="A process is an atomic component that contains a processing." alt="" coords="403,55,475,80"/>
+<area shape="rect" id="node5" title="Pipeline containing Process nodes, and links between node parameters." alt="" coords="527,29,599,55"/>
+<area shape="rect" id="node7" href="#sample_module.capsul.pipeline1.Pipeline1" target="_top" title="A dumy pipeline example." alt="" coords="651,29,729,55"/>
+<area shape="rect" id="node8" href="#sample_module.capsul.process1.Process1" target="_top" title="This silly process concatenates in an output file the input file and the other int input parameter. Not very useful, for sure." alt="" coords="523,79,603,104"/>
+</map>

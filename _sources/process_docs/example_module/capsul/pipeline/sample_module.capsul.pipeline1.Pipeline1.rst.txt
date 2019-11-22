@@ -1,0 +1,77 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+:orphan:
+
+.. currentmodule:: sample_module.capsul.pipeline1
+
+
+.. _sample_module.capsul.pipeline1.Pipeline1:
+
+sample_module.capsul.pipeline1.Pipeline1
+========================================
+
+Pipeline1
+---------
+
+
+
+    A dumy pipeline example.
+    Contains 3 nodes and a switch.
+    
+    
+    .. note::
+    
+        * Type 'Pipeline1.help()' for a full description of this process parameters.
+        * Type '<Pipeline1>.get_input_spec()' for a full description of this process input trait types.
+        * Type '<Pipeline1>.get_output_spec()' for a full description of this process output trait types.
+    
+
+.. _sample_module.capsul.pipeline1.Pipeline1_inputs:
+
+
+Inputs
+~~~~~~
+
+[Mandatory]
+
++----------------------------------------------------------------------------+
+| | **nodes_activation**: a legal value (['ControllerTrait'] - mandatory)    |
+| |     No description.                                                      |
++----------------------------------------------------------------------------+
+| | **SW**: a legal value (['Enum'] - mandatory)                             |
+| |     No description.                                                      |
++----------------------------------------------------------------------------+
+| | **A_param_a**: a file name (['File'] - mandatory)                        |
+| |     input param A                                                        |
++----------------------------------------------------------------------------+
+| | **A_param_b**: an integer (int or long) (['Int'] - mandatory)            |
+| |     another parameter B                                                  |
++----------------------------------------------------------------------------+
+| | **B_param_a**: a file name (['File'] - mandatory)                        |
+| |     input param A                                                        |
++----------------------------------------------------------------------------+
+| | **B_param_b**: an integer (int or long) (['Int'] - mandatory)            |
+| |     another parameter B                                                  |
++----------------------------------------------------------------------------+
+| | **C_param_b**: an integer (int or long) (['Int'] - mandatory)            |
+| |     another parameter B                                                  |
++----------------------------------------------------------------------------+
+
+.. _sample_module.capsul.pipeline1.Pipeline1_outputs:
+
+
+Outputs
+~~~~~~~
+
++------------------------------------------------------------------------+
+| | **param_c**: a file name (['File (filename: input)'] - mandatory)    |
+| |     output param C                                                   |
++------------------------------------------------------------------------+
+
+Pipeline schema
+~~~~~~~~~~~~~~~
+
+.. image:: ../schema/sample_module.capsul.pipeline1.Pipeline1.png
+    :height: 400px
+    :align: center
+

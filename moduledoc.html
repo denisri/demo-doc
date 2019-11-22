@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Doc de modules python &#8212; Doc tutorial 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sample Notebook" href="tutorial/sample_notebook.html" />
+    <link rel="prev" title="Documentation Sphinx" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="doc-de-modules-python">
+<h1>Doc de modules python<a class="headerlink" href="#doc-de-modules-python" title="Permalink to this headline">¶</a></h1>
+<p>Les docs peuvent inclure des diagrammes d’héritage (module <em>inheritance_diagram</em>, qui utilise <a class="reference external" href="https://www.graphviz.org/">dot</a>).</p>
+<div class="graphviz"><img src="_images/inheritance-31161793ae6adda5b720843e384920eb91fbca09.png" alt="Inheritance diagram of sample_module, sample_module.mod1, sample_module.capsul, sample_module.capsul.process1, sample_module.capsul.pipeline1" usemap="#inheritance0bb68696fe" class="inheritance graphviz" /></div>
+<map id="inheritance0bb68696fe" name="inheritance0bb68696fe">
+<area shape="rect" id="node2" href="#sample_module.mod1.Class1" target="_top" title="A class which does nothing." alt="" coords="14,5,86,31"/>
+<area shape="rect" id="node7" href="#sample_module.capsul.pipeline1.Pipeline1" target="_top" title="A dumy pipeline example." alt="" coords="651,29,729,55"/>
+<area shape="rect" id="node8" href="#sample_module.capsul.process1.Process1" target="_top" title="This silly process concatenates in an output file the input file and the other int input parameter. Not very useful, for sure." alt="" coords="523,79,603,104"/>
+</map><div class="section" id="module-sample_module.mod1">
+<span id="sample-module-mod1"></span><h2>sample_module.mod1<a class="headerlink" href="#module-sample_module.mod1" title="Permalink to this headline">¶</a></h2>
+<p>Sample module just to illustrate doc</p>
+<dl class="class">
+<dt id="sample_module.mod1.Class1">
+<em class="property">class </em><code class="sig-prename descclassname">sample_module.mod1.</code><code class="sig-name descname">Class1</code><a class="reference internal" href="_modules/sample_module/mod1.html#Class1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_module.mod1.Class1" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class which does nothing.</p>
+<dl class="method">
+<dt id="sample_module.mod1.Class1.a_method">
+<code class="sig-name descname">a_method</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">c=0</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_module/mod1.html#Class1.a_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_module.mod1.Class1.a_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds arguments</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – 1st argument</p></li>
+<li><p><strong>b</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – 2nd argument</p></li>
+<li><p><strong>c</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – 3rd argument</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>sum</strong> – the sum</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-sample_module.capsul.process1">
+<span id="process1"></span><h2>process1<a class="headerlink" href="#module-sample_module.capsul.process1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sample_module.capsul.process1.Process1">
+<em class="property">class </em><code class="sig-prename descclassname">sample_module.capsul.process1.</code><code class="sig-name descname">Process1</code><span class="sig-paren">(</span><em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_module/capsul/process1.html#Process1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_module.capsul.process1.Process1" title="Permalink to this definition">¶</a></dt>
+<dd><p>This silly process concatenates in an output file the input file and the other int input parameter. Not very useful, for sure.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Type ‘Process1.help()’ for a full description of this process parameters.</p></li>
+<li><p>Type ‘&lt;Process1&gt;.get_input_spec()’ for a full description of this process input trait types.</p></li>
+<li><p>Type ‘&lt;Process1&gt;.get_output_spec()’ for a full description of this process output trait types.</p></li>
+</ul>
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="module-sample_module.capsul.pipeline1">
+<span id="pipeline1"></span><h2>pipeline1<a class="headerlink" href="#module-sample_module.capsul.pipeline1" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="sample_module.capsul.pipeline1.Pipeline1">
+<em class="property">class </em><code class="sig-prename descclassname">sample_module.capsul.pipeline1.</code><code class="sig-name descname">Pipeline1</code><span class="sig-paren">(</span><em class="sig-param">autoexport_nodes_parameters=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_module/capsul/pipeline1.html#Pipeline1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_module.capsul.pipeline1.Pipeline1" title="Permalink to this definition">¶</a></dt>
+<dd><p>A dumy pipeline example.
+Contains 3 nodes and a switch.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Type ‘Pipeline1.help()’ for a full description of this process parameters.</p></li>
+<li><p>Type ‘&lt;Pipeline1&gt;.get_input_spec()’ for a full description of this process input trait types.</p></li>
+<li><p>Type ‘&lt;Pipeline1&gt;.get_output_spec()’ for a full description of this process output trait types.</p></li>
+</ul>
+</div>
+<dl class="method">
+<dt id="sample_module.capsul.pipeline1.Pipeline1.pipeline_definition">
+<code class="sig-name descname">pipeline_definition</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_module/capsul/pipeline1.html#Pipeline1.pipeline_definition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_module.capsul.pipeline1.Pipeline1.pipeline_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define pipeline structure, nodes, sub-pipelines, switches, and
+links.</p>
+<p>This method should be overloaded in subclasses, it does nothing in the
+base Pipeline class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Doc tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Doc de modules python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-sample_module.mod1">sample_module.mod1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sample_module.capsul.process1">process1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-sample_module.capsul.pipeline1">pipeline1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/sample_notebook.html">Sample Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Code examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process_docs/example_module/capsul/index.html">Capsul</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Documentation Sphinx</a></li>
+      <li>Next: <a href="tutorial/sample_notebook.html" title="next chapter">Sample Notebook</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, nobody.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/moduledoc.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

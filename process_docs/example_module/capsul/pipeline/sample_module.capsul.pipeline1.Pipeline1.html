@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>sample_module.capsul.pipeline1.Pipeline1 &#8212; Doc tutorial 1.0.0 documentation</title>
+    <link rel="stylesheet" href="../../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sample-module-capsul-pipeline1-pipeline1">
+<span id="id1"></span><h1>sample_module.capsul.pipeline1.Pipeline1<a class="headerlink" href="#sample-module-capsul-pipeline1-pipeline1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="pipeline1">
+<h2>Pipeline1<a class="headerlink" href="#pipeline1" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>A dumy pipeline example.
+Contains 3 nodes and a switch.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Type ‘Pipeline1.help()’ for a full description of this process parameters.</p></li>
+<li><p>Type ‘&lt;Pipeline1&gt;.get_input_spec()’ for a full description of this process input trait types.</p></li>
+<li><p>Type ‘&lt;Pipeline1&gt;.get_output_spec()’ for a full description of this process output trait types.</p></li>
+</ul>
+</div>
+</div></blockquote>
+<div class="section" id="inputs">
+<span id="sample-module-capsul-pipeline1-pipeline1-inputs"></span><h3>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h3>
+<p>[Mandatory]</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>nodes_activation</strong>: a legal value ([‘ControllerTrait’] - mandatory)</div>
+<div class="line-block">
+<div class="line">No description.</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>SW</strong>: a legal value ([‘Enum’] - mandatory)</div>
+<div class="line-block">
+<div class="line">No description.</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>A_param_a</strong>: a file name ([‘File’] - mandatory)</div>
+<div class="line-block">
+<div class="line">input param A</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>A_param_b</strong>: an integer (int or long) ([‘Int’] - mandatory)</div>
+<div class="line-block">
+<div class="line">another parameter B</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>B_param_a</strong>: a file name ([‘File’] - mandatory)</div>
+<div class="line-block">
+<div class="line">input param A</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><div class="line-block">
+<div class="line"><strong>B_param_b</strong>: an integer (int or long) ([‘Int’] - mandatory)</div>
+<div class="line-block">
+<div class="line">another parameter B</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>C_param_b</strong>: an integer (int or long) ([‘Int’] - mandatory)</div>
+<div class="line-block">
+<div class="line">another parameter B</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="outputs">
+<span id="sample-module-capsul-pipeline1-pipeline1-outputs"></span><h3>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line"><strong>param_c</strong>: a file name ([‘File (filename: input)’] - mandatory)</div>
+<div class="line-block">
+<div class="line">output param C</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pipeline-schema">
+<h3>Pipeline schema<a class="headerlink" href="#pipeline-schema" title="Permalink to this headline">¶</a></h3>
+<a class="reference internal image-reference" href="../../../../_images/sample_module.capsul.pipeline1.Pipeline1.png"><img alt="../../../../_images/sample_module.capsul.pipeline1.Pipeline1.png" class="align-center" src="../../../../_images/sample_module.capsul.pipeline1.Pipeline1.png" style="height: 400px;" /></a>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">Doc tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../moduledoc.html">Doc de modules python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial/sample_notebook.html">Sample Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../auto_examples/index.html">Code examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Capsul</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, nobody.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../../../../_sources/process_docs/example_module/capsul/pipeline/sample_module.capsul.pipeline1.Pipeline1.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

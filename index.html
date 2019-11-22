@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Documentation Sphinx &#8212; Doc tutorial 1.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Doc de modules python" href="moduledoc.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="documentation-sphinx">
+<h1>Documentation Sphinx<a class="headerlink" href="#documentation-sphinx" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generalites">
+<h2>Généralités<a class="headerlink" href="#generalites" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="http://www.sphinx-doc.org/en/master/">http://www.sphinx-doc.org/en/master/</a></p>
+<p>Il faut:</p>
+<ul class="simple">
+<li><p>un fichier de config <a class="reference internal" href="auto_examples/conf.html"><span class="doc">conf.py</span></a></p></li>
+<li><p>un fichier de doc d’entrée <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> (format: <a class="reference external" href="http://docutils.sourceforge.net/rst.html">RestructuredText</a>)</p></li>
+</ul>
+<p>On peut générer <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> en utilisant la commande: <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code>. Il faut ensuite l’éditer.</p>
+<p>Sphinx / RestructuredText permet comme pas mal de langages de Markup, de faire des documents assez facilement, avec des titres à plusieurs niveaux, des liens http externes, des liens et références internes etc.</p>
+<p>On peut utiliser des styles, qu’on choisit dans le fichier de conf, et qu’on peut customiser par des CSS.</p>
+<p>Sphinx ajoute le parsing de code source python et permet de faire la doc de modules, classes, fonctions python. Il a aussi des extensions.</p>
+<p><code class="docutils literal notranslate"><span class="pre">autodoc</span></code>, peut-être la plus importante, permet le parsing automatique des modules / classes python.</p>
+<p>Il y a d’autres extensions pour les liens (références croisées) entre docs sphinx et les classes documentées (<code class="docutils literal notranslate"><span class="pre">intersphinx</span></code>), des galleries d’images et de sniplets de code (<code class="docutils literal notranslate"><span class="pre">sphinx-gallery</span></code>), pour documenter facilement et lisiblement les paramètres des fonctions (<code class="docutils literal notranslate"><span class="pre">napoleon</span></code> ou <code class="docutils literal notranslate"><span class="pre">numpydoc</span></code>), etc etc.</p>
+<p>Ex de lien sur un autre document: <a class="reference internal" href="moduledoc.html"><span class="doc">Doc de modules python</span></a></p>
+</div>
+<div class="section" id="generer-le-html">
+<h2>Générer le HTML<a class="headerlink" href="#generer-le-html" title="Permalink to this headline">¶</a></h2>
+<p>Si on a généré un <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> avec <code class="docutils literal notranslate"><span class="pre">sphinx-quickstart</span></code>, il suffit de faire:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>make html
+</pre></div>
+</div>
+<p>dans le bon directory (<code class="docutils literal notranslate"><span class="pre">doc/</span></code> ici).</p>
+<p>Sinon on peut le faire à la main:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sphinx-build . _build/html
+</pre></div>
+</div>
+</div>
+<div class="section" id="code-python">
+<h2>Code python<a class="headerlink" href="#code-python" title="Permalink to this headline">¶</a></h2>
+<p>Ex de bloc de code python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">capsul.api</span> <span class="k">import</span> <span class="n">capsul_engine</span>
+
+<span class="n">ce</span> <span class="o">=</span> <span class="n">capsul_engine</span><span class="p">()</span>
+<span class="n">process</span> <span class="o">=</span> <span class="n">ce</span><span class="o">.</span><span class="n">get_process_instance</span><span class="p">(</span>
+    <span class="s1">&#39;capsul.pipeline.test.test_activation.MyPipeline&#39;</span>
+</pre></div>
+</div>
+<p>On peut évidemment faire des liens sur des <a class="reference internal" href="moduledoc.html#sample_module.mod1.Class1" title="sample_module.mod1.Class1"><code class="xref py py-class docutils literal notranslate"><span class="pre">sample_module.mod1.Class1</span></code></a> du projet (nom “long”), ou avec un nom “court”: <a class="reference internal" href="moduledoc.html#sample_module.mod1.Class1" title="sample_module.mod1.Class1"><code class="xref py py-class docutils literal notranslate"><span class="pre">Class1</span></code></a>, ou <a class="reference internal" href="moduledoc.html#sample_module.mod1.Class1" title="sample_module.mod1.Class1"><code class="xref py py-class docutils literal notranslate"><span class="pre">sous</span> <span class="pre">un</span> <span class="pre">autre</span> <span class="pre">nom</span></code></a>.</p>
+<p>Avec <em>intersphinx</em> on peut aussi faire des liens sur les classes / foonctions / modules d’autres projets: <a class="reference external" href="https://docs.python.org/3/library/argparse.html#argparse.ArgumentParser" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">argparse.ArgumentParser</span></code></a>, <a class="reference external" href="https://populse.github.io/capsul/api/pipeline.html#capsul.pipeline.pipeline.Pipeline" title="(in CAPSUL v2.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">capsul.pipeline.pipeline.Pipeline</span></code></a>.</p>
+<p>Ou des <a class="reference external" href="https://populse.github.io/capsul/index.html">liens sur des pages de projets externes</a> avec <em>extlinks</em>.</p>
+</div>
+<div class="section" id="notebooks">
+<h2>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h2>
+<p><em>nbsphinx</em> peut convertir des <a class="reference external" href="https://jupyter.org/">notebooks jupyter</a> en docs sphinx, consultables dans la doc. Ça nécessite un peu de config et préprocessing pour vraiment bien s’intégrer.</p>
+<ul class="simple">
+<li><p>Consulter le notebook converti en sphinx: <a class="reference internal" href="tutorial/sample_notebook.html"><span class="doc">Sample Notebook</span></a></p></li>
+<li><p>Le télécharger: <a class="reference external" href="_static/tutorial/sample_notebook.ipynb">Sample Notebook</a></p></li>
+</ul>
+<p>Le préprocessing a été ajouté à <a class="reference internal" href="auto_examples/conf.html"><span class="doc">conf.py</span></a> qui est exécuté automatiquement à chaque build de doc. Il sert à:</p>
+<ul class="simple">
+<li><p>convertir le notebook avec le bon noyau python (python2 / python3)</p></li>
+<li><p>copier le notebook “brut” dans la doc construite de manière à être téléchargeable aussi, pas seulement en version convertie en sphinx.</p></li>
+<li><p>copier les images qui vont avec le notebook dans la doc construite.</p></li>
+</ul>
+<p>Ça nécessite d’avoir aussi installé <a class="reference external" href="https://pandoc.org/">pandoc</a>.</p>
+</div>
+<div class="section" id="sphinx-gallery">
+<h2>Sphinx-Gallery<a class="headerlink" href="#sphinx-gallery" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://sphinx-gallery.github.io/stable/index.html">sphinx_gallery</a> inclut des “code snippets” avec des images dans les docs. Il faut un directory de codes (<code class="docutils literal notranslate"><span class="pre">.py</span></code>) avec un fichier <code class="docutils literal notranslate"><span class="pre">README.txt</span></code> dedans (en sphinx) qui fait l’en-tête.
+Tous les fichiers de code doivent avoir une docstring au début.</p>
+<p>Si le code génère une figure <a class="reference external" href="http://matplotlib.org">matplotlib</a>, cette figure sera récupérée et utilisée comme imagette pour le snippet en question. Notons que <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.1.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">imshow()</span></code></a> permet d’intéger n’importe quelle image.</p>
+<p><a class="reference internal" href="auto_examples/index.html"><span class="doc">Code examples</span></a></p>
+<p>Il faut configurer sphinx-gallery dans <a class="reference internal" href="auto_examples/conf.html"><span class="doc">conf.py</span></a>.</p>
+</div>
+<div class="section" id="traitements-et-pipelines-capsul">
+<h2>Traitements et pipelines Capsul<a class="headerlink" href="#traitements-et-pipelines-capsul" title="Permalink to this headline">¶</a></h2>
+<p>On peut générer de la doc Sphinx pour les process et pipelines Capsul, en utilisant <a class="reference external" href="https://populse.github.io/capsul/api/sphinxext.html#module-capsul.sphinxext" title="(in CAPSUL v2.2.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">capsul.sphinxext.capsul_pipeline_rst</span></code></a>.</p>
+<p><a class="reference internal" href="process_docs/example_module/capsul/index.html"><span class="doc">Capsul</span></a></p>
+<p>La commande adéquate peut être ajoutée dans <a class="reference internal" href="auto_examples/conf.html"><span class="doc">conf.py</span></a>. Ça revient à lancer la commande:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m capsul.sphinxext.capsul_pipeline_rst -i sample_module.capsul -o _build/html/process_docs/example_module --schema
+</pre></div>
+</div>
+</div>
+<div class="section" id="integration-a-github-gh-pages-via-travis-ci">
+<h2>Intégration à github gh-pages via Travis-ci<a class="headerlink" href="#integration-a-github-gh-pages-via-travis-ci" title="Permalink to this headline">¶</a></h2>
+<p>La doc peut être construite par <a class="reference external" href="https://travis-ci.org/">Travis-CI</a> et injectée dans la branche <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> du projet <a class="reference external" href="https://github.com">GitHub</a>.</p>
+<p>Pour cela il faut:</p>
+<ul class="simple">
+<li><p>donner les droits à travis-ci de pousser la doc dans le projet github (la branche <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> est sous git). Pour cela il faut générer un “github personal access token”, et le mettre en variable d’environnement dans le build travis-ci (ici c’est <code class="docutils literal notranslate"><span class="pre">GITHUB_ACCESS_TOKEN</span></code>). <a class="reference external" href="https://docs.travis-ci.com/user/deployment/pages/">La doc est ici</a>.</p></li>
+<li><p>avoir créé sur GitHub la branche <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> (vide, possiblement détachée).</p></li>
+<li><p>configurer <code class="docutils literal notranslate"><span class="pre">.travis.yaml</span></code>, en ajoutant un truc de ce genre (la condition ici est liée à des variables définies plus tôt dans <code class="docutils literal notranslate"><span class="pre">.travis.yaml</span></code>, il faut l’adapter):</p></li>
+</ul>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">deploy</span><span class="p">:</span>
+  <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pages</span>
+  <span class="nt">skip_cleanup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">github_token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$GITHUB_ACCESS_TOKEN</span>
+  <span class="nt">target-branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gh-pages</span>
+  <span class="nt">local-dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">doc/_build/html</span>
+  <span class="nt">on</span><span class="p">:</span>
+    <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+    <span class="nt">condition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$PUSH_DOC_TO_GH_PAGES == yes &amp;&amp; $TRAVIS_OS_NAME == linux &amp;&amp; $TRAVIS_PYTHON_VERSION == 3.5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="pages-de-doc">
+<h2>Pages de doc<a class="headerlink" href="#pages-de-doc" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="moduledoc.html">Doc de modules python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="moduledoc.html#module-sample_module.mod1">sample_module.mod1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduledoc.html#module-sample_module.capsul.process1">process1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduledoc.html#module-sample_module.capsul.pipeline1">pipeline1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/sample_notebook.html">Sample Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Code examples</a><ul>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="process_docs/example_module/capsul/index.html">Capsul</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="process_docs/example_module/capsul/index.html#sample-module-capsul-capsul-user-guide"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sample_module.capsul.capsul</span></code>: User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="process_docs/example_module/capsul/index.html#sample-module-capsul-capsul-api"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sample_module.capsul.capsul</span></code>: API</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Doc tutorial</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="moduledoc.html">Doc de modules python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/sample_notebook.html">Sample Notebook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="auto_examples/index.html">Code examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="process_docs/example_module/capsul/index.html">Capsul</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="moduledoc.html" title="next chapter">Doc de modules python</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, nobody.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

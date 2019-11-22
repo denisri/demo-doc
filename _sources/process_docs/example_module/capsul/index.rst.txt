@@ -1,0 +1,29 @@
+.. AUTO-GENERATED FILE -- DO NOT EDIT!
+
+:orphan:
+
+Capsul
+******
+
+.. _capsul:
+
+:mod:`sample_module.capsul.capsul`: User Guide
+==============================================
+
+:mod:`sample_module.capsul.capsul`: API
+=======================================
+
+.. _capsul_api:
+
+The API of functions and classes, as given by the docstrings.
+
+Pipelines
+---------
+
+.. include:: pipeline/index.rst
+
+Buildingblocks
+--------------
+
+.. include:: process/index.rst
+
