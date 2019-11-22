@@ -32,7 +32,7 @@ install:
     - sudo apt-get install -y pandoc graphviz
     - pip install sphinx sphinx-gallery pandoc nbsphinx
     - export PYTHONPATH="$PWD/python:$PYTHONPATH"
-    - echo PYTHONPATH: $PYTHONPATH
+    - echo "PYTHONPATH: $PYTHONPATH"
     - if [[  "$TRAVIS_OS_NAME" = "linux" && "$TRAVIS_PYTHON_VERSION" == "3.7" ]]; then cd doc && make html && touch build/html/.nojekyll && cd ..; fi
     - if [[ -n "$GITHUB_ACCESS_TOKEN" ]]; then export PUSH_DOC_TO_GH_PAGES=yes; fi
 
